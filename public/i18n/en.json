@@ -1,7 +1,21 @@
 {
-  "title": "Multi-language app",
-  "label": "Select another language!",
-  "about": "About",
-  "home": "Home",
-  "user": "My name is: {{name}}"
+  "title": "title",
+  "SearchLabel": "Search",
+  "modelLabel": "Model",
+  "templateLabel": "Template",
+  "postLabel": "Post",
+  "viewAllLabel": "View All",
+  "popularLabel": "Popular",
+  "newTryLabel": "Try New",
+  "exclusiveLabel": "Exclusive",
+  "architectureLabel": "Architecture",
+  "mechaLabel": "Mecha",
+  "photoLabel": "Photo",
+  "onlineDrawingLabel": "Online Drawing",
+  "LoginLabel": "Login",
+  "popularTodayLabel": "Popular today",
+  "latestReleseLabel": "Latest Release",
+  "runAtMostLabel": "Run At Most",
+  "allLabel": "All",
+  "filterLabel": "Filter"
 }
