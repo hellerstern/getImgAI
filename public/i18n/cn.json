@@ -1,0 +1,21 @@
+{
+  "title": "标题",
+  "SearchLabel": "搜素",
+  "modelLabel": "模型",
+  "templateLabel": "模板",
+  "postLabel": "帖子",
+  "viewAllLabel": "查看全部",
+  "popularLabel": "热门",
+  "newTryLabel": "尝鲜",
+  "exclusiveLabel": "独家",
+  "architectureLabel": "建筑",
+  "mechaLabel": "机甲",
+  "photoLabel": "摄影",
+  "onlineDrawingLabel": "在线生图",
+  "LoginLabel": "登录",
+  "popularTodayLabel": "今日热门",
+  "latestReleseLabel": "最新发布",
+  "runAtMostLabel": "最多运行",
+  "allLabel": "全部",
+  "filterLabel": "筛选"
+}

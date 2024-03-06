@@ -10,6 +10,8 @@ import { About } from "./pages/About";
 import { Home } from "./pages/Home";
 import ColorModeContext from "./context/ColorModeContext";
 import { PaletteMode } from "@mui/material";
+import HeadLayout from "./components/HeadLayout";
+import FooterLayout from "./components/FooterLayout";
 
 const App = () => {
   const [mode, setMode] = useState<PaletteMode>(
@@ -32,6 +34,17 @@ const App = () => {
       createTheme({
         palette: {
           mode,
+          ...(mode === "light"
+            ? {
+                // palette values for light mode
+              }
+            : {
+                // palette values for dark mode
+
+                background: {
+                  default: "#000000",
+                },
+              }),
         },
       }),
     [mode]
@@ -43,11 +56,13 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Router>
-            <Menu />
+            {/* <Menu /> */}
+            <HeadLayout />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
             </Routes>
+            <FooterLayout />
           </Router>
         </ThemeProvider>
       </ColorModeContext.Provider>
