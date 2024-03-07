@@ -12,6 +12,7 @@ import ColorModeContext from "./context/ColorModeContext";
 import { PaletteMode } from "@mui/material";
 import HeadLayout from "./components/HeadLayout";
 import FooterLayout from "./components/FooterLayout";
+import PopularView from "./pages/Model/Popular";
 
 const App = () => {
   const [mode, setMode] = useState<PaletteMode>(
@@ -51,7 +52,7 @@ const App = () => {
   );
 
   return (
-    <Suspense fallback="loading">
+    <Suspense fallback="">
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -61,6 +62,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/model/popular" element={<PopularView />} />
             </Routes>
             <FooterLayout />
           </Router>

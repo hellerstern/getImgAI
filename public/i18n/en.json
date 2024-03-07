@@ -17,5 +17,7 @@
   "latestReleseLabel": "Latest Release",
   "runAtMostLabel": "Run At Most",
   "allLabel": "All",
-  "filterLabel": "Filter"
+  "filterLabel": "Filter",
+  "loginLabel": "Log In",
+  "signUpLabel": "Sign Up"
 }

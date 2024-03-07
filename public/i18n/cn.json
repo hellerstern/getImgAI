@@ -17,5 +17,7 @@
   "latestReleseLabel": "最新发布",
   "runAtMostLabel": "最多运行",
   "allLabel": "全部",
-  "filterLabel": "筛选"
+  "filterLabel": "筛选",
+  "loginLabel": "登录",
+  "signUpLabel": "报名"
 }

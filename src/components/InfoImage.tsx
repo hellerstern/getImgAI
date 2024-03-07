@@ -32,7 +32,7 @@ const InfoImage = ({
     flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, .7), transparent 35%), url(${Image})`,
+    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, .7), transparent 35%), url(${image})`,
     backgroundRepeat: "no-repeat",
     boxShadow: "12px",
     padding: "10px 8px 16px 8px",
@@ -47,7 +47,7 @@ const InfoImage = ({
         <TitleLabel>{title}</TitleLabel>
         <MainInfoContainer>
           <GroupContainer>
-            <GroupIcon sx={{ color: "white", fontSize: "10px" }}>
+            <GroupIcon sx={{ color: "white", fontSize: "14px" }}>
               {group.charAt(0)}
             </GroupIcon>
             <GroupLabel>{group}</GroupLabel>
