@@ -4,7 +4,16 @@ import { useTranslation } from "react-i18next";
 import { useTheme, styled } from "@mui/material/styles";
 import { useContext } from "react";
 
-import { Box, Typography, Divider } from "@mui/material/";
+import {
+  Box,
+  Typography,
+  Divider,
+  Button,
+  Menu,
+  MenuItem,
+  Checkbox,
+  ListItemText,
+} from "@mui/material/";
 
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
@@ -22,6 +31,9 @@ const Model = () => {
   const { t } = useTranslation();
   const theme = useTheme();
   const [optionIndex, setOptionIndex] = useState<number>(0);
+  const [status, setStatus] = useState<null | HTMLElement>(null);
+
+  const isOpen = Boolean(status);
   const sortSettings = [
     t("allLabel"),
     "SDXL",
@@ -31,11 +43,25 @@ const Model = () => {
     t("photoLabel"),
   ];
 
+  const filterProps = [
+    "Textual Inversion",
+    "Textual Inversion",
+    "Textual Inversion",
+    "Textual Inversion",
+  ];
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setStatus(event.currentTarget);
+  };
+  const handleClose = () => {
+    setStatus(null);
+  };
+
   return (
     <ModelContainer>
       <PopularContainer>
         <PopularLabel>{t("popularLabel")}</PopularLabel>
-        <ViewAllContainer>
+        <ViewAllContainer href="/model/popular">
           <ViewAllLabel>{t("viewAllLabel")}</ViewAllLabel>
           <KeyboardArrowRightIcon />
         </ViewAllContainer>
@@ -111,10 +137,28 @@ const Model = () => {
             })}
           </SettingsContainer>
         </ActionContainer>
-        <FilterContainer>
+        <FilterContainer onClick={handleClick}>
           <FilterLabel>{t("filterLabel")}</FilterLabel>
-          <FilterAltOutlinedIcon />
+          <FilterAltOutlinedIcon
+            sx={{ color: theme.palette.mode === "light" ? "black" : "white" }}
+          />
         </FilterContainer>
+        <Menu
+          anchorEl={status}
+          open={isOpen}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+          sx={{ height: "360px" }}
+        >
+          {filterProps.map((option, index) => (
+            <MenuItem key={index} value={option}>
+              <Checkbox />
+              <ListItemText primary={option} />
+            </MenuItem>
+          ))}
+        </Menu>
       </SortContainer>
       <ImageContainer>
         {ImageInfos.map((item, index) => {
@@ -151,11 +195,13 @@ const PopularLabel = styled(Typography)(({ theme }) => ({
   fontSize: "18px",
 }));
 
-const ViewAllContainer = styled(Box)(({ theme }) => ({
+const ViewAllContainer = styled("a")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  gap: "16px",
+  gap: "12px",
+  textDecoration: "none",
+  color: "white",
 }));
 
 const ViewAllLabel = styled(Typography)(({ theme }) => ({
@@ -220,7 +266,7 @@ const SortSetting = styled(Box)(({ theme }) => ({
   cursor: "pointer",
 }));
 
-const FilterContainer = styled(Box)(({ theme }) => ({
+const FilterContainer = styled(Button)(({ theme }) => ({
   display: "flex",
   borderRadius: "4px",
   justifyContent: "center",
@@ -231,10 +277,11 @@ const FilterContainer = styled(Box)(({ theme }) => ({
     theme.palette.mode === "light" ? "1px solid #e3e3e3" : "1px solid #494949",
 }));
 
-const FilterLabel = styled(Box)(({ theme }) => ({
+const FilterLabel = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   fontSize: "14px",
   lineHeight: "22px",
+  color: theme.palette.mode === "light" ? "black" : "white",
 }));
 
 export default Model;

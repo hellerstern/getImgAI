@@ -8,6 +8,8 @@ import ColorModeContext from "../context/ColorModeContext";
 import Model from "./Model";
 
 import { Box, Tabs, Tab, Container, Typography } from "@mui/material/";
+import Template from "./Template";
+import Post from "./Post";
 
 interface TabPanelProps {
   children?: ReactNode;
@@ -70,10 +72,10 @@ export const Home = () => {
         <Model />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <Template />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <Post />
       </CustomTabPanel>
     </ViewContainer>
   );
@@ -96,7 +98,7 @@ const ViewTab = styled(Tab)(({ theme }) => ({
     background: theme.palette.mode === "light" ? "black" : "white",
     color: theme.palette.mode === "light" ? "white" : "#000",
   },
-  background: theme.palette.mode === "light" ? "white" : "black",
+  background: theme.palette.mode === "light" ? "white" : "#0f0f0f",
   color: theme.palette.mode === "light" ? "#0f0f0f" : "white",
   borderRadius: "8.2px",
   fontWeight: "700",

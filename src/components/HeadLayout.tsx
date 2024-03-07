@@ -54,12 +54,14 @@ const HeadLayout = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <LogoImage
-          src={theme.palette.mode === "light" ? LightLogo : DarkLogo}
-          width={120}
-          height={24}
-          alt="Dark Logo"
-        />
+        <a href="/">
+          <LogoImage
+            src={theme.palette.mode === "light" ? LightLogo : DarkLogo}
+            width={120}
+            height={24}
+            alt="Dark Logo"
+          />
+        </a>
         <LogoSearchBar
           // label={t("SearchLabel")}
           placeholder={t("SearchLabel")}
@@ -119,6 +121,7 @@ const HeadLayout = () => {
             <Brightness4Icon fontSize="large" />
           )}
         </IconButton>
+        <LoginButton>{t("loginLabel")}</LoginButton>
       </ToolBarContainer>
     </HeaderContainer>
   );
@@ -155,7 +158,7 @@ const LogoSearchBar = styled(TextField)(({ theme }) => ({
 const ToolBarContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
-  gap: "32px",
+  gap: "20px",
   alignItems: "center",
 }));
 
@@ -171,6 +174,8 @@ const OnlineDrawingButton = styled(Button)(({ theme }) => ({
     background: "#5858e6",
   },
   color: "white",
+  fontFamily: "14px",
+  fontWeight: "700",
 }));
 
 const FirstCover = styled(Box)(({ theme }) => ({
@@ -186,7 +191,9 @@ const MagicImage = styled("img")(({ theme }) => ({
 }));
 
 const MagicLabel = styled(Typography)(({ theme }) => ({
-  fontSize: "16px",
+  fontSize: "14px",
+  fontWeight: "700",
+  lineHeight: "16px",
 }));
 
 const VDivider = styled(Box)(({ theme }) => ({
@@ -212,7 +219,7 @@ const ProMode = styled(Button)(({ theme }) => ({
   },
   padding: "8px",
   color: "black",
-  fontWeight: "600",
+  fontWeight: "700",
   borderRadius: "6px",
 }));
 
@@ -224,6 +231,18 @@ const DiscordIcon = styled("img")(({ theme }) => ({
 const BellIcon = styled("img")(({ theme }) => ({
   width: "36px",
   height: "36px",
+}));
+
+const LoginButton = styled(Button)(({ theme }) => ({
+  background: "#5858e6",
+  padding: "14px 28px",
+  color: "white",
+  "&:hover": {
+    background: "#5858e6",
+  },
+  fontSize: "14px",
+  lineHeight: "16px",
+  fontWeight: "700",
 }));
 
 export default HeadLayout;
