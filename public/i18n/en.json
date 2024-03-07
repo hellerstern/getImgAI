@@ -19,5 +19,14 @@
   "allLabel": "All",
   "filterLabel": "Filter",
   "loginLabel": "Log In",
-  "signUpLabel": "Sign Up"
+  "signUpLabel": "Sign Up",
+  "emailAddressLabel": "Email Address",
+  "inviteCodeLabel": "Invitation Code",
+  "optionalLabel": "Optional",
+  "otherLoginLabel": "Other ways to Log In",
+  "otherSignUpLabel": "Other ways to Sign Up",
+  "LoginDescriptionLabel": "I agree with",
+  "userServiceAgreementLabel": "User Service Agreement",
+  "privacyAgreementLabel": "Privacy Agreement",
+  "andLabel": "&"
 }

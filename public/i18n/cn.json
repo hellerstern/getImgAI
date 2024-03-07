@@ -19,5 +19,14 @@
   "allLabel": "全部",
   "filterLabel": "筛选",
   "loginLabel": "登录",
-  "signUpLabel": "报名"
+  "signUpLabel": "注册",
+  "emailAddressLabel": "邮箱地址",
+  "inviteCodeLabel": "邀请码",
+  "optionalLabel": "选填",
+  "otherLoginLabel": "其他方式登录",
+  "otherSignUpLabel": "其他方式注册",
+  "LoginDescriptionLabel": "登录即代表您同意了",
+  "userServiceAgreementLabel": "用户服务协议",
+  "privacyAgreementLabel": "隐私协议",
+  "andLabel": "和"
 }
