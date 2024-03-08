@@ -9,6 +9,8 @@ import LightDiscordCIcon from "../assets/images/lightDiscord_c.svg";
 import LightInstagramCIcon from "../assets/images/lightInstagram_c.svg";
 import LightTikTokCIcon from "../assets/images/lightTiktok_c.svg";
 import LightTwitterCIcon from "../assets/images/lightTwitter.svg";
+import GoogleIcon from "../assets/images/Google.svg";
+import DiscordIcon from "../assets/images/Discord.svg";
 
 export {
   DarkLogo,
@@ -22,4 +24,6 @@ export {
   LightInstagramCIcon,
   LightTikTokCIcon,
   LightTwitterCIcon,
+  GoogleIcon,
+  DiscordIcon,
 };

@@ -34,12 +34,14 @@ import {
 
 import { LANGUAGES } from "../constants/index";
 import { LangSwithcer } from "./LangSwitcher";
+import { LoginRegister } from "./LoginRegister";
 
 const HeadLayout = () => {
   const { i18n, t } = useTranslation();
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const [lang, setLang] = useState<string>("en");
+  const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -49,6 +51,14 @@ const HeadLayout = () => {
   const handleMenuClose = (_lang: string) => {
     if (_lang.length > 0) setLang(_lang);
     setAnchorEl(null);
+  };
+
+  const openLoginDialog = () => {
+    setDialogOpen(true);
+  };
+
+  const closeLoginDialog = () => {
+    setDialogOpen(false);
   };
 
   return (
@@ -121,7 +131,8 @@ const HeadLayout = () => {
             <Brightness4Icon fontSize="large" />
           )}
         </IconButton>
-        <LoginButton>{t("loginLabel")}</LoginButton>
+        <LoginButton onClick={openLoginDialog}>{t("loginLabel")}</LoginButton>
+        <LoginRegister isOpen={dialogOpen} handleClose={closeLoginDialog} />
       </ToolBarContainer>
     </HeaderContainer>
   );
