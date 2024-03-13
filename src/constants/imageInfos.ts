@@ -16,7 +16,7 @@ export const ImageInfos = [
     likedNumber: 12000,
   },
   {
-    image: "../assets/models/model4.png",
+    image: "../assets/models/model5.png",
     label: "Orange XL",
     title: "title",
     group: "OrangPunk",

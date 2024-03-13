@@ -145,7 +145,7 @@ const SortSetting = styled(Box)(({ theme }) => ({
 const ImageContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "24px",
-  alignItems: "center",
+  alignItems: "start",
   justifyContent: "center",
   paddingBottom: "18px",
 }));

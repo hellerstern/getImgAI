@@ -214,7 +214,7 @@ const ViewAllLabel = styled(Typography)(({ theme }) => ({
 const ImageContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "24px",
-  alignItems: "center",
+  alignItems: "start",
   justifyContent: "center",
 }));
 
