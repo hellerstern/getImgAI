@@ -13,6 +13,8 @@ import ShoppingModel from "../../assets/models/model6.png";
 import SpringModel from "../../assets/models/model7.png";
 
 import { ActiveSwitcher } from "../../components/ActiveSwitcher";
+import { ImageInfos } from "../../constants/imageInfos";
+import InfoImage from "../../components/InfoImage";
 const itemData = [
   HatModel,
   SkirtModel,
@@ -99,17 +101,26 @@ export default function Post() {
         </SettingsContainer>
       </ActionContainer>
       <ImageViewContainer>
-        {" "}
         <ImageList variant="masonry" cols={6} gap={18}>
-          {itemData.map((item) => (
-            <ImageListItem key={item}>
-              <img
-                srcSet={`${item}?w=287&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item}?w=287&fit=crop&auto=format`}
-                alt={item}
-                loading="lazy"
+          {ImageInfos.map((item) => (
+            <ImageListItem>
+              <InfoImage
+                image={item.image}
+                label={item.label}
+                title={item.title}
+                group={item.group}
+                likedNumber={item.likedNumber}
+                viewedNumber={item.viewedNumber}
               />
             </ImageListItem>
+            // <ImageListItem key={item}>
+            //   <img
+            //     srcSet={`${item}?w=287&fit=crop&auto=format&dpr=2 2x`}
+            //     src={`${item}?w=287&fit=crop&auto=format`}
+            //     alt={item}
+            //     loading="lazy"
+            //   />
+            // </ImageListItem>
           ))}
         </ImageList>
       </ImageViewContainer>

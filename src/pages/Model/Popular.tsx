@@ -157,7 +157,7 @@ const SettingOption = styled(Box)(({ theme }) => ({
 const ImageContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "24px",
-  alignItems: "center",
+  alignItems: "start",
   justifyContent: "center",
   padding: "0px 0px 18px 0px",
 }));

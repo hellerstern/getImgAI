@@ -32,16 +32,17 @@ const InfoImage = ({
     flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, .7), transparent 35%), url(${image})`,
+    position: "relative",
+
     backgroundRepeat: "no-repeat",
     boxShadow: "12px",
-    padding: "10px 8px 16px 8px",
-    height: "325px",
-    width: "287px",
+    // padding: "10px 8px 16px 8px",
     borderRadius: "5px",
   }));
   return (
     <ImageContainer>
+      <img src={image} style={{ width: "100%", height: "100%" }} />
+      <DarkOverlay></DarkOverlay>
       <LabelContainer>{label}</LabelContainer>
       <DetailContainer>
         <TitleLabel>{title}</TitleLabel>
@@ -72,7 +73,19 @@ const InfoImage = ({
   );
 };
 
+const DarkOverlay = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  bottom: "0",
+  left: "0",
+  width: "100%",
+  height: "30%",
+  background: `linear-gradient(180.99deg, rgba(0, 0, 0, 0) 0.85%, #000000 99.15%)`,
+}));
+
 const LabelContainer = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: "10px",
+  left: "10px",
   "&.MuiBox-root": {
     padding: "8px 12px",
   },
@@ -86,6 +99,8 @@ const LabelContainer = styled(Box)(({ theme }) => ({
 }));
 
 const DetailContainer = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  bottom: "14px",
   display: "flex",
   flexDirection: "column",
   gap: "12px",
@@ -97,18 +112,18 @@ const TitleLabel = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
   lineHeight: "16px",
   color: "white",
+  paddingLeft: "16px",
 }));
 
 const MainInfoContainer = styled(Box)(({ theme }) => ({
   display: "flex",
-  justifyContent: "space-between",
-  width: "100%",
+  justifyContent: "space-evenly",
 }));
 
 const GroupContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  gap: "4px",
+  gap: "8px",
 }));
 
 const GroupIcon = styled(Box)(({ theme }) => ({
@@ -132,7 +147,7 @@ const GroupLabel = styled(Typography)(({ theme }) => ({
 const FavContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  gap: "16px",
+  gap: "8px",
 }));
 
 const FavIconContainer = styled(Box)(({ theme }) => ({
